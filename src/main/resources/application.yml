@@ -1,0 +1,27 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dialect: org.hibernate.dialect.H2Dialect
+    output:
+      ansi:
+        enabled: always
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+  servlet:
+    multipart:
+      file-size-threshold: 1MB
+      location: /Users/user/data
+      max-file-size: 100MB
+      max-request-size: 100MB

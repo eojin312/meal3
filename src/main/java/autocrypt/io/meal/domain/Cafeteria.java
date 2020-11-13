@@ -10,7 +10,8 @@ import java.time.LocalDateTime;
 
 @Entity
 public class Cafeteria {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String cuisine;
@@ -28,6 +29,5 @@ public class Cafeteria {
 
 
     public Cafeteria() {
-
     }
 }

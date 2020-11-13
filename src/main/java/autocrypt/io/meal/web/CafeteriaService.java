@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -16,10 +17,17 @@ public class CafeteriaService {
 
     private final CafeteriaRepository cafeteriaRepository;
 
-    public Cafeteria randomId() {
+    int randomCafeteria = 0;
+
+    public Optional<Cafeteria> randomId() {
         List<Cafeteria> cafeteriaList = new ArrayList<>();
-        int randomCafeteria;
-        randomCafeteria = (int) (Math.random() * cafeteriaList.size());
-        return cafeteriaRepository.findById(randomCafeteria).orElseThrow();
+        randomCafeteria = (int) (Math.random() * 10);
+        if (randomCafeteria == 0) {
+            System.out.println("스킵..");
+        }
+        Optional<Cafeteria> cafeteria = cafeteriaRepository.findNameById(randomCafeteria);
+        return cafeteria;
     }
+
+
 }
