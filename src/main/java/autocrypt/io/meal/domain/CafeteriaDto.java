@@ -10,6 +10,8 @@ public class CafeteriaDto {
 
     private String name;
     private String cuisine;
+    private LocalDateTime created;
+    private LocalDateTime updated;
 
     @Getter
     public static class Create {
@@ -27,8 +29,6 @@ public class CafeteriaDto {
             this.created = LocalDateTime.now();
             this.updated = LocalDateTime.now();
         }
-
-
         public Cafeteria toEntity() {
             return Cafeteria.builder()
                     .id(id)
@@ -40,10 +40,4 @@ public class CafeteriaDto {
         }
 
     }
-
-    class RandomCafeteria {
-        private String name;
-    }
-
-
 }
