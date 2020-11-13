@@ -106,10 +106,12 @@ class CafeteriaServiceTest {
     }
 
     @Test
-    void 식당_입력() {
+    void 식당_입력_테스트() {
         Cafeteria cafeteria = cafeteriaService.save(CafeteriaDto.Create.builder()
                 .name("칼국수")
                 .cuisine("만둣집")
+                .created(LocalDateTime.now())
+                .updated(LocalDateTime.now())
                 .build()
         );
 
