@@ -1,6 +1,7 @@
 package autocrypt.io.meal.web;
 
 import autocrypt.io.meal.domain.Cafeteria;
+import autocrypt.io.meal.domain.CafeteriaDto;
 import autocrypt.io.meal.repository.CafeteriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,10 @@ public class CafeteriaService {
     private final CafeteriaRepository cafeteriaRepository;
 
     int randomCafeteria = 0;
+
+    public Cafeteria save(CafeteriaDto.Create cafeteriaDto) {
+        return cafeteriaRepository.save(cafeteriaDto.toEntity());
+    }
 
     public Optional<Cafeteria> randomId() {
         List<Cafeteria> cafeteriaList = new ArrayList<>();

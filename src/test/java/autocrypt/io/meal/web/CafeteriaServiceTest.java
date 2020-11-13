@@ -1,6 +1,7 @@
 package autocrypt.io.meal.web;
 
 import autocrypt.io.meal.domain.Cafeteria;
+import autocrypt.io.meal.domain.CafeteriaDto;
 import autocrypt.io.meal.repository.CafeteriaRepository;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
@@ -102,5 +103,16 @@ class CafeteriaServiceTest {
     @Test
     void 랜덤식당_잘나오는_테스트() {
         Assertions.assertNotNull(cafeteriaService.randomId());
+    }
+
+    @Test
+    void 식당_입력() {
+        Cafeteria cafeteria = cafeteriaService.save(CafeteriaDto.Create.builder()
+                .name("칼국수")
+                .cuisine("만둣집")
+                .build()
+        );
+
+        Assertions.assertNotNull(cafeteria);
     }
 }
