@@ -1,3 +1,4 @@
+/*
 package autocrypt.io.meal.domain;
 
 import autocrypt.io.meal.web.CafeteriaService;
@@ -28,3 +29,4 @@ public class MailService {
         mimeMessageHelper.setText(cafeteriaService.randomId() + "이거 드세요!@");
     }
 }
+*/
