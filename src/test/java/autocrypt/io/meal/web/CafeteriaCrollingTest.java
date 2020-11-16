@@ -43,12 +43,12 @@ public class CafeteriaCrollingTest {
         for (Element element : elements) {
             String name = element.select("div.dbg0pd").text();
             String grade = element.select("div.BTtC6e").text();
-            Cafeteria sav = cafeteriaService.save(CafeteriaDto.Create.builder()
+            Cafeteria save = cafeteriaService.save(CafeteriaDto.Create.builder()
                     .name(name)
                     .created(LocalDateTime.now())
                     .updated(LocalDateTime.now())
                     .build());
-            Assertions.assertNotNull(sav);
+            Assertions.assertNotNull(save);
             System.out.println(grade);
         }
     }
