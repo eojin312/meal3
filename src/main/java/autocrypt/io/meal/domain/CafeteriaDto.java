@@ -34,4 +34,15 @@ public class CafeteriaDto {
                     .build();
         }
     }
+
+    @Getter
+    public static class NameList {
+        private String name;
+
+        @Builder
+        public NameList(String name) {
+            this.name = name;
+        }
+    }
+
 }

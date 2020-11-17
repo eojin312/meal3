@@ -44,13 +44,11 @@ public class CafeteriaService {
         }
         // 랜덤의 기준을 정하기 위해 findAll 을 이용해 list size 로 숫자를 random 의 기준을 정해준다
         List<Cafeteria> cafeteriaList = cafeteriaRepository.findAll();
-        randomCafeteria = (int) (Math.random() * cafeteriaList.size());
+        randomCafeteria = (int) (Math.random() * (cafeteriaList.size()-1)) + 1;
 
-        // 0 이 나오면 일단 스킵으로 예외처리된다 (추후 다른 아이디어로 수정 예정)
-        if (randomCafeteria == 0) {
-            System.out.println("스킵..");
-        }
         Optional<CafeteriaDto.Create> cafeteria = cafeteriaRepository.findNameById(randomCafeteria);
         return cafeteria;
+
     }
+
 }

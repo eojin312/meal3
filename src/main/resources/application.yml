@@ -13,15 +13,30 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
-logging:
-  level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type: trace
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-
+  mail:
+    host: smtp-mail.outlook.com
+    port: 587
+    username: smail@autocrypt.io
+    password: Auto6500!
+    properties:
+      mail:
+        protocol: smtp
+        tls: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp-mail.outlook.com
   servlet:
     multipart:
       file-size-threshold: 1MB
       location: /Users/user/data
       max-file-size: 100MB
       max-request-size: 100MB
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
