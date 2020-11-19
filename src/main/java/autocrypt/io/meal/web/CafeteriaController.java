@@ -16,7 +16,6 @@ public class CafeteriaController {
 
     /**
      * 일단은 리턴을 Cafeteria 로 설정한다
-     *
      * @return
      */
     @GetMapping("/list")

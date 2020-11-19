@@ -1,6 +1,6 @@
 package autocrypt.io.meal.common;
 
-import autocrypt.io.meal.domain.MailService;
+import autocrypt.io.meal.web.MailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

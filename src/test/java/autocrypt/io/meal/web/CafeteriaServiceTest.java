@@ -32,14 +32,15 @@ class CafeteriaServiceTest {
         Elements elements = document.select("div.VkpGBb");
         for (Element element : elements) {
             String name = element.select("div.dbg0pd").text();
-            String grade = element.select("div.BTtC6e").text();
+            String cuisine = element.select("#text").text();
             Cafeteria save = cafeteriaService.save(CafeteriaDto.Create.builder()
                     .name(name)
+                    .cuisine(cuisine)
                     .created(LocalDateTime.now())
                     .updated(LocalDateTime.now())
                     .build());
             Assertions.assertNotNull(save);
-            System.out.println(grade);
+            System.out.println(cuisine);
         }
     }
 
